@@ -18,7 +18,7 @@ The tool generates a new device identifier, which allows Cursor to recognize you
 ```bash
 curl -sL dub.sh/cursornew | python3
 ```
-> `dub.sh/cursornew` points to: https://raw.githubusercontent.com/ultrasev/cursor-reset/refs/heads/master/reset.py .
+> [dub.sh/cursornew](https://dub.sh/cursornew) is a shortcut for downloading the script file [`reset.py`](./reset.py) from this repository.
 
 You can also download the script file [`reset.py`](./reset.py) from this repository, customize it and run it manually.
 
