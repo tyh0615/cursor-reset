@@ -15,20 +15,20 @@ The tool generates a new device identifier, which allows Cursor to recognize you
 - 📦 Zero dependencies - runs with built-in Python only.
 
 ## Installation & Usage
+```bash
+curl -sL dub.sh/cursornew | python3
+```
+> `dub.sh/cursornew` points to: https://raw.githubusercontent.com/ultrasev/cursor-reset/refs/heads/master/reset.py .
 
-1. Download the script file:
-   - Get `cursor.py` from this repository
+You can also download the script file [`reset.py`](./reset.py) from this repository, customize it and run it manually.
 
-2. Execute the script:
-   ```bash
-   chmod +x cursor.py
-   ./cursor.py
-   ```
-   or
-   ```bash
-   python3 cursor.py
-   ```
-   This will generate a new random device ID automatically.
+```bash
+chmod +x reset.py
+./reset.py # or python3 reset.py
+```
+
+
+This will generate a new random device ID automatically.
 
 **Important**: You need to completely close Cursor before running the script. If Cursor runs in the background, it may override the new device ID with the old one eventually.
 
