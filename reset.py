@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+'''
+Cursor Trial Reset Tool
+
+This script resets the device IDs in Cursor's configuration file to generate a new random device ID.
+
+Repository: https://github.com/ultrasev/cursor-reset
+Author: @ultrasev
+Created: 10/Dec/2024
+'''
 import json
 import os
 import shutil
