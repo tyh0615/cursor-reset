@@ -16,15 +16,15 @@ The tool generates a new device identifier, which allows Cursor to recognize you
 
 ## Installation & Usage
 ```bash
-curl -sL dub.sh/cursornew | python3
+curl -sL dub.sh/cursorreset | python3
 ```
-> [dub.sh/cursornew](https://dub.sh/cursornew) is a shortcut for downloading the script file [`reset.py`](./reset.py) from this repository.
+> [dub.sh/cursorreset](https://dub.sh/cursorreset) is a shortcut for downloading the script file [`reset.py`](./reset.py) from this repository.
+
 
 You can also download the script file [`reset.py`](./reset.py) from this repository, customize it and run it manually.
 
 ```bash
-chmod +x reset.py
-./reset.py # or python3 reset.py
+python3 reset.py
 ```
 
 
