@@ -8,6 +8,7 @@ Repository: https://github.com/ultrasev/cursor-reset
 Author: @ultrasev
 Created: 10/Dec/2024
 '''
+
 import json
 import os
 import shutil
@@ -45,10 +46,10 @@ def reset_cursor_id():
     with open(storage_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
+    print("🎉 Device IDs have been successfully reset. The new device IDs are: \n")
     print(
         json.dumps(
             {
-                "message": "Successfully modified IDs",
                 "machineId": machine_id,
                 "macMachineId": mac_machine_id,
                 "devDeviceId": dev_device_id,
