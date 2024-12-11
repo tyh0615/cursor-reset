@@ -6,15 +6,6 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 
-
-def generate_random_id():
-    return os.urandom(32).hex()
-
-
-def generate_random_uuid():
-    return str(uuid.uuid4())
-
-
 def backup_file(file_path: str):
     if os.path.exists(file_path):
         backup_path = f"{file_path}.backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
@@ -34,9 +25,9 @@ def reset_cursor_id():
         with open(storage_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-    machine_id = generate_random_id()
-    mac_machine_id = generate_random_id()
-    dev_device_id = generate_random_uuid()
+    machine_id = os.urandom(32).hex()
+    mac_machine_id = os.urandom(32).hex()
+    dev_device_id = str(uuid.uuid4())
 
     data["telemetry.machineId"] = machine_id
     data["telemetry.macMachineId"] = mac_machine_id
@@ -45,10 +36,10 @@ def reset_cursor_id():
     with open(storage_file, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
-    print("Successfully modified IDs:")
     print(
         json.dumps(
             {
+                "message": "Successfully modified IDs",
                 "machineId": machine_id,
                 "macMachineId": mac_machine_id,
                 "devDeviceId": dev_device_id,
