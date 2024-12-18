@@ -15,17 +15,31 @@ import shutil
 import uuid
 from datetime import datetime
 from pathlib import Path
+import platform
+
 
 def backup_file(file_path: str):
+    """Create a timestamped backup of the given file."""
     if os.path.exists(file_path):
         backup_path = f"{file_path}.backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         shutil.copy2(file_path, backup_path)
 
 
+def get_storage_file():
+    """Determine the storage file location based on the operating system."""
+    system = platform.system()
+    if system == "Windows":
+        return Path(os.getenv("APPDATA")) / "Cursor" / "User" / "globalStorage" / "storage.json"
+    elif system == "Darwin":  # macOS
+        return Path(os.path.expanduser("~")) / "Library" / "Application Support" / "Cursor" / "User" / "globalStorage" / "storage.json"
+    elif system == "Linux":
+        return Path(os.path.expanduser("~")) / ".config" / "Cursor" / "User" / "globalStorage" / "storage.json"
+    else:
+        raise OSError(f"Unsupported operating system: {system}")
+
+
 def reset_cursor_id():
-    storage_file = (Path(os.path.expanduser("~")) / "Library" /
-                    "Application Support" / "Cursor" / "User" /
-                    "globalStorage" / "storage.json")
+    storage_file = get_storage_file()
     storage_file.parent.mkdir(parents=True, exist_ok=True)
     backup_file(storage_file)
 
