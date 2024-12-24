@@ -30,7 +30,8 @@ python3 reset.py
 
 This will generate a new random device ID.
 
-**Important**: You need to completely close Cursor before running the script. If Cursor runs in the background, it may override the new device ID with the old one.
+❗️❗️❗️ **Important**: You need to log out and completely close Cursor before running the script. If Cursor is still running in the background, it may revert back to the previous device ID, undoing the reset.
+
 
 ## Configuration Location
 
