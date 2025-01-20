@@ -15,7 +15,7 @@ The tool generates a new device identifier, which allows Cursor to recognize you
 - 📦 Zero dependencies - runs with built-in Python only.
 
 ## Installation & Usage
-
+### python
 ```bash
 curl -sL dub.sh/cursorreset | python3
 ```
@@ -27,7 +27,8 @@ You can also download the script file [`reset.py`](./reset.py) from this reposit
 ```bash
 python3 reset.py
 ```
-
+### node
+**uuid** 使用uuid生成 `npm i uuid`
 This will generate a new random device ID.
 
 ❗️❗️❗️ **Important**: You need to log out and completely close Cursor before running the script. If Cursor is still running in the background, it may revert back to the previous device ID, undoing the reset.
