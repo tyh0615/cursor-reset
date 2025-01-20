@@ -93,6 +93,7 @@ function resetCursorId() {
       2
     )
   );
+   console.log(`查看地址：%APPDATA%\Cursor\User\globalStorage\storage.json`);
 }
 
 resetCursorId();
